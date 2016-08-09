@@ -8,9 +8,9 @@ class Order < ApplicationRecord
   has_many :orderings
 
   def total_order_price
-      order_price = []
+      order_price = 0
       orderings.each do |ordering|
-        order_price << ordering.total_ordering_price
+        order_price += ordering.total_ordering_price
       end
     order_price
   end

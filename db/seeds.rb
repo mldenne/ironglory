@@ -75,7 +75,13 @@ User.includes(:billing_addresses).where.not(:billing_addresses => {can_be_billed
   order.shipping_address = user.shipping_addresses.first
   order.billing_address = user.billing_addresses.first
   3.times do
-    order.orderings << Ordering.where(order: nil)
+    order.orderings << Ordering.where(order: nil).sample
   end
   order.save!
+end
+
+Ordering.where(order: nil).each do |ordering|
+  puts "fixing"
+  ordering.order_id = 15
+  ordering.save!
 end
