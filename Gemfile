@@ -32,14 +32,13 @@ gem 'pry-rails'
 gem 'faker'
 gem 'figaro'
 
-
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'factory_girl_rails'
 end
 
 group :development do
