@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # gemfiles added for app
 gem 'pry-rails'
+gem 'faker'
 
 
 # Use Capistrano for deployment
