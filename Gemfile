@@ -32,6 +32,9 @@ gem 'pry-rails'
 gem 'faker'
 gem 'figaro'
 
+# for credit card processing
+gem 'stripe'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
