@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160808233801) do
+ActiveRecord::Schema.define(version: 20160809181436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 20160808233801) do
     t.string   "city"
     t.string   "state"
     t.integer  "zipcode"
-    t.integer  "user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "can_be_billed_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "can_be_billed_type"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -31,11 +32,27 @@ ActiveRecord::Schema.define(version: 20160808233801) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "guests", force: :cascade do |t|
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "name",       default: "Guest"
+  end
+
+  create_table "orderings", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer  "order_id"
     t.integer  "order_number"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "can_order_id"
+    t.string   "can_order_type"
   end
 
   create_table "products", force: :cascade do |t|
@@ -47,14 +64,16 @@ ActiveRecord::Schema.define(version: 20160808233801) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "category_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.text     "body"
-    t.integer  "user_id"
+    t.integer  "can_review_id"
     t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "can_review_type"
   end
 
   create_table "shipping_addresses", force: :cascade do |t|
@@ -62,8 +81,10 @@ ActiveRecord::Schema.define(version: 20160808233801) do
     t.string   "city"
     t.string   "state"
     t.integer  "zipcode"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "can_be_shipped_to_id"
+    t.string   "can_be_shipped_to_type"
   end
 
   create_table "users", force: :cascade do |t|
