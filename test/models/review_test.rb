@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ReviewTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  should belong_to(:product)
+  should belong_to(:can_review)
 end

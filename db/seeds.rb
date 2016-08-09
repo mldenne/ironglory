@@ -25,6 +25,7 @@ def convert_data(data)
   data
 end
 
+
 csv = CSV.foreach("app/assets/CSVs/Iron_Glory_Inventory.csv", headers: true, converters: lambda{|h| convert_data(h)}, header_converters: lambda {|h| convert_headers(h)})
 csv.each do |row|
   row = row.to_hash
@@ -32,4 +33,23 @@ csv.each do |row|
   product = Product.create!(row.to_hash)
   product.category = Category.find_or_create_by!(name: category)
   product.save!
+end
+
+10.times do
+  user = User.create!(firstname:Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Internet.password)
+end
+
+
+15.times do
+  shipping_address = ShippingAddress.new(street_address: Faker::Address.street_address + " " + Faker::Address.street_suffix, city: Faker::Address.city, state: Faker::Address.state, zipcode: Faker::Address.zip_code)
+  shipping_address.can_be_shipped_to = User.sample
+end
+
+10.times do
+  billing_address = BillingAddress.new(street_address: Faker::Address.street_address + " " + Faker::Address.street_suffix, city: Faker::Address.city, state: Faker::Address.state, zipcode: Faker::Address.zip_code)
+  billing_address.can_be_billed = User.sample
+end
+
+25.times do
+  order = Order.new(order_number: SecureRandom.hex(10),)
 end
