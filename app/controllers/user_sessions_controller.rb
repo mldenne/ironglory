@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
         session[:identifier] = @user.username
         render json: @user
       else
-        render json: {errors: "Incorrect password"}, :status => 422
+        render json: {errors: "Incorrect login info"}, :status => 422
       end
     end
   end
@@ -40,7 +40,9 @@ class UserSessionsController < ApplicationController
 
   def destroy
     session[:identifier] = nil
-    render :status => 200
+    @guest = Guest.create!
+    session[:identifier] = @guest.guest_num
+    render json: @guest, :status => 200
   end
 
 end

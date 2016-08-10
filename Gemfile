@@ -36,6 +36,7 @@ gem 'refile', github: 'refile/refile', require: 'refile/rails'
 gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
 gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
 gem 'refile-postgres', '~> 1.4'
+gem 'rack-cors', :require => 'rack/cors'
 
 # for credit card processing
 gem 'stripe'
