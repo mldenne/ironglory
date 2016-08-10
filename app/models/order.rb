@@ -20,6 +20,14 @@ class Order < ApplicationRecord
     order_price
   end
 
+  def total_objects
+    order_objects = 0
+    orderings.each do |ordering|
+      order_objects += ordering.quantity
+    end
+    order_objects
+  end
+
   private
 
   # def set_order_status
