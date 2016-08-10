@@ -32,6 +32,9 @@ csv.each do |row|
   puts category = row.delete("category")
   product = Product.create!(row.to_hash)
   product.category = Category.find_or_create_by!(name: category)
+  File.open("app/assets/images/iron-glory-products/igp#{product.id}.png", "rb") do |file|
+    product.product_image = file
+  end
   product.save!
 end
 
@@ -42,7 +45,7 @@ end
   firstname: first_name,
   lastname: last_name,
   email: Faker::Internet.email,
-  password: Faker::Internet.password,
+  password: "espn",
   username: Faker::Internet.user_name("#{first_name} #{last_name}", %w(- _))
   )
 end
