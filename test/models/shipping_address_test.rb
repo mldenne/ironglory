@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ShippingAddressTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  should belong_to(:can_be_shipped_to)
+  should have_many(:orders)
 end

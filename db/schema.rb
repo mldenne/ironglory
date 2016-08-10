@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20160809210106) do
 
   # These are extensions that must be enabled in order to support this database
@@ -48,10 +49,12 @@ ActiveRecord::Schema.define(version: 20160809210106) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "order_number"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "can_order_id"
     t.string   "can_order_type"
+    t.integer  "billing_address_id"
+    t.integer  "shipping_address_id"
   end
 
   create_table "products", force: :cascade do |t|

@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class BillingAddressTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  should belong_to(:can_be_billed)
+  should have_many(:orders)
 end
