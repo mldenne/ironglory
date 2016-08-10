@@ -70,6 +70,13 @@ end
   ordering.save!
 end
 
+OrderStatus.create!(name: "In Progress")
+OrderStatus.create!(name: "Customer Information")
+OrderStatus.create!(name: "Shipping Information")
+OrderStatus.create!(name: "Complete")
+
+
+
 20.times do
   order = Order.new(order_number: SecureRandom.hex(10))
   user =
