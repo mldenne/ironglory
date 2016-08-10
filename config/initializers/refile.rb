@@ -1,1 +1,1 @@
-Refile.cdn_host = 'https://c4f482c0.ngrok.io/'
+Refile.cdn_host = 'https://arcane-harbor-93523.herokuapp.com/'
