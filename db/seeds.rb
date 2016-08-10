@@ -72,6 +72,7 @@ User.includes(:billing_addresses).where.not(:billing_addresses => {can_be_billed
   order.can_order = user
   order.shipping_address = user.shipping_addresses.first
   order.billing_address = user.billing_addresses.first
+  order.save!
   3.times do
     ordering = Ordering.new
     ordering.product = Product.all.sample
