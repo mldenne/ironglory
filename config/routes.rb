@@ -14,8 +14,9 @@ Rails.application.routes.draw do
   resources :orders
   resources :users
   resources :charges
-
   resources :orderings, only: [:create, :update, :destroy]
+  resources :products, only: [:index]
+
 
   root 'categories#index'
   post '/login' => 'user_sessions#create'

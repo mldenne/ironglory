@@ -1,1 +1,1 @@
-Refile.cdn_host = 'http://localhost:3000/'
+Refile.cdn_host = 'https://c4f482c0.ngrok.io/'
