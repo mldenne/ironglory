@@ -15,6 +15,9 @@ class UsersSessionsController < ApplicationController
     end
   end
 
+  #can everyone be guest user until they sign in?
+  #Guest user is destroyed on overwriting session unless they have an order that they own.
+
   def destroy
     session[:username] = nil
     render json:, :status => 200
