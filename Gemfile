@@ -31,6 +31,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry-rails'
 gem 'faker'
 gem 'figaro'
+gem "rack-protection", :github => "sinatra/rack-protection"
+gem 'refile', github: 'refile/refile', require: 'refile/rails'
+gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
+gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
+gem 'refile-postgres', '~> 1.4'
 
 # for credit card processing
 gem 'stripe'
