@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
         session[:identifier] = @user.username
         render json: @user
       else
-        render json: {errors: "Incorrect password"}, :status => 422
+        render json: {errors: "Incorrect login info"}, :status => 422
       end
     end
   end
