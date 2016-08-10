@@ -25,6 +25,7 @@ def convert_data(data)
   data
 end
 
+
 csv = CSV.foreach("app/assets/CSVs/Iron_Glory_Inventory.csv", headers: true, converters: lambda{|h| convert_data(h)}, header_converters: lambda {|h| convert_headers(h)})
 csv.each do |row|
   row = row.to_hash
@@ -32,4 +33,55 @@ csv.each do |row|
   product = Product.create!(row.to_hash)
   product.category = Category.find_or_create_by!(name: category)
   product.save!
+end
+
+10.times do
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  user = User.create!(
+  firstname: first_name,
+  lastname: last_name,
+  email: Faker::Internet.email,
+  password: Faker::Internet.password,
+  username: Faker::Internet.user_name("#{first_name} #{last_name}", %w(- _))
+  )
+end
+
+
+15.times do
+  shipping_address = ShippingAddress.new(street_address: Faker::Address.street_address + " " + Faker::Address.street_suffix, city: Faker::Address.city, state: Faker::Address.state, zipcode: Faker::Address.zip_code)
+  shipping_address.can_be_shipped_to = User.all.sample
+  shipping_address.save!
+end
+
+10.times do
+  billing_address = BillingAddress.new(street_address: Faker::Address.street_address + " " + Faker::Address.street_suffix, city: Faker::Address.city, state: Faker::Address.state, zipcode: Faker::Address.zip_code)
+  billing_address.can_be_billed = User.includes(:shipping_addresses).where.not(:shipping_addresses => {can_be_shipped_to_id: nil}).sample
+  billing_address.save!
+end
+
+60.times do
+  ordering = Ordering.new
+  ordering.product = Product.all.sample
+  ordering.quantity = (1..4).to_a.sample
+  ordering.save!
+end
+
+20.times do
+  order = Order.new(order_number: SecureRandom.hex(10))
+  user =
+User.includes(:billing_addresses).where.not(:billing_addresses => {can_be_billed: nil}).sample
+  order.can_order = user
+  order.shipping_address = user.shipping_addresses.first
+  order.billing_address = user.billing_addresses.first
+  3.times do
+    order.orderings << Ordering.where(order: nil).sample
+  end
+  order.save!
+end
+
+Ordering.where(order: nil).each do |ordering|
+  puts "fixing"
+  ordering.order_id = 15
+  ordering.save!
 end
