@@ -7,7 +7,11 @@ class ProductSerializer < ActiveModel::Serializer
   # has_one :other_sizes
 
   def product_image
-    Refile.attachment_url(object, :product_image)
+    Refile.attachment_url(object, :product_image, :fit, 400, 400)
+  end
+
+  def price
+    '%.2f' % (object[:price].to_i/100.0)
   end
   # def other_sizes
   # image_array = []

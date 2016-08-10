@@ -30,8 +30,9 @@ csv = CSV.foreach("app/assets/CSVs/Iron_Glory_Inventory.csv", headers: true, con
 csv.each do |row|
   row = row.to_hash
   puts category = row.delete("category")
-  product = Product.create!(row.to_hash)
+  product = Product.new(row.to_hash)
   product.category = Category.find_or_create_by!(name: category)
+  product.save!
   File.open("app/assets/images/iron-glory-products/igp#{product.id}.png", "rb") do |file|
     product.product_image = file
   end
@@ -63,12 +64,6 @@ end
   billing_address.save!
 end
 
-60.times do
-  ordering = Ordering.new
-  ordering.product = Product.all.sample
-  ordering.quantity = (1..4).to_a.sample
-  ordering.save!
-end
 
 20.times do
   order = Order.new(order_number: SecureRandom.hex(10))
@@ -78,7 +73,11 @@ User.includes(:billing_addresses).where.not(:billing_addresses => {can_be_billed
   order.shipping_address = user.shipping_addresses.first
   order.billing_address = user.billing_addresses.first
   3.times do
-    order.orderings << Ordering.where(order: nil).sample
+    ordering = Ordering.new
+    ordering.product = Product.all.sample
+    ordering.quantity = (1..4).to_a.sample
+    ordering.save!
+    order.orderings << ordering
   end
   order.save!
 end
