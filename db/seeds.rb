@@ -77,7 +77,6 @@ User.includes(:billing_addresses).where.not(:billing_addresses => {can_be_billed
     ordering = Ordering.new
     ordering.product = Product.all.sample
     ordering.quantity = (1..4).to_a.sample
-    ordering.save!
     order.orderings << ordering
   end
   order.save!
