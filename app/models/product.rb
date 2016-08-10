@@ -6,5 +6,5 @@ class Product < ApplicationRecord
   attachment :product_image
 
   # ensures deleted/inactive products are not shown
-  default_scope { where(active: true) }
+  # default_scope { where(active: true) }
 end
