@@ -20,6 +20,10 @@ class Order < ApplicationRecord
     order_price
   end
 
+  def add_shipping
+    total_order_price + 500
+  end
+
   def total_objects
     order_objects = 0
     orderings.each do |ordering|
