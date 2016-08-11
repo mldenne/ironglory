@@ -7,4 +7,5 @@ class Product < ApplicationRecord
 
   # ensures deleted/inactive products are not shown
   # default_scope { where(active: true) }
+
 end

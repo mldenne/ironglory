@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :current_user
+  before_action :current_order
 
   def show
-    @order_items = current_order.order_items
+    render json: current_order
   end
-
 end

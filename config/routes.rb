@@ -1,23 +1,18 @@
 Rails.application.routes.draw do
-  get 'order_items/create'
-
-  get 'order_items/update'
-
-  get 'order_items/destroy'
-
   resources :shipping_addresses
   resources :billing_addresses
   resources :reviews
   resources :categories do
     resources :products
   end
+
   resources :orders, only: [:show]
   resources :users
   resources :charges
   resources :orderings, only: [:create, :update, :destroy]
   resources :products, only: [:index]
 
-
+  get '/order' => 'orders#show'
   root 'categories#index'
   post '/login' => 'user_sessions#create'
   get '/check' => 'user_sessions#show'

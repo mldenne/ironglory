@@ -1,4 +1,6 @@
 class ChargesController < ApplicationController
+  before_action :current_user
+  before_action :current_order
 
   def new
   end

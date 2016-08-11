@@ -1,7 +1,9 @@
 class CategoriesController < ApplicationController
+  before_action :current_user
+  before_action :current_order
   def index
     @categories = Category.all
-    render json: @categories
+    render json: @categories, each_serializer: CategoryIndexSerializer
   end
 
   def show

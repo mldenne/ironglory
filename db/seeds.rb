@@ -22,6 +22,9 @@ def convert_data(data)
   if data.include?(":")
     data = data.split(":")[1]
   end
+  if data == "Bands"
+    data = "Music"
+  end
   data
 end
 
@@ -78,11 +81,11 @@ User.includes(:billing_addresses).where.not(:billing_addresses => {can_be_billed
   order.can_order = user
   order.shipping_address = user.shipping_addresses.first
   order.billing_address = user.billing_addresses.first
+  order.save!
   3.times do
     ordering = Ordering.new
     ordering.product = Product.all.sample
     ordering.quantity = (1..4).to_a.sample
-    ordering.save!
     order.orderings << ordering
   end
   order.order_status = OrderStatus.find(4)
