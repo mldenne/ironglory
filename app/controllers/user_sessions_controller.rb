@@ -5,13 +5,13 @@ class UserSessionsController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user
       if @user.authenticate(params[:password])
-        if session[:identifier]
+        if session[:guest_id]
           @guest = Guest.find_by(guest_num: session[:identifier])
           if @guest && @guest.orders.length == 0
             @guest.destroy
           end
         end
-        session[:identifier] = @user.username
+        session[:user_id] = @user.username
         render json: @user
       else
         render json: {errors: "Incorrect login info"}, :status => 422
@@ -20,12 +20,12 @@ class UserSessionsController < ApplicationController
   end
 
   def show
-    if session[:identifier]
-      @user = User.find_by(username: session[:identifier])
-      @guest = Guest.find_by(guest_num: session[:identifier])
+    if session[:guest_id] || session[:user_id]
+      @user = User.find_by(username: session[:user_id])
+      @guest = Guest.find_by(guest_num: session[:guest_id])
     else
       @guest = Guest.create!
-      session[:identifier] = @guest.guest_num
+      session[:guest_id] = @guest.guest_num
     end
     if @user
       render json: @user

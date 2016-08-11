@@ -145,6 +145,37 @@ ALTER SEQUENCE guests_id_seq OWNED BY guests.id;
 
 
 --
+-- Name: order_statuses; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE order_statuses (
+    id integer NOT NULL,
+    name character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: order_statuses_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE order_statuses_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: order_statuses_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE order_statuses_id_seq OWNED BY order_statuses.id;
+
+
+--
 -- Name: orderings; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -189,7 +220,8 @@ CREATE TABLE orders (
     can_order_id integer,
     can_order_type character varying,
     billing_address_id integer,
-    shipping_address_id integer
+    shipping_address_id integer,
+    order_status_id integer
 );
 
 
@@ -421,6 +453,13 @@ ALTER TABLE ONLY guests ALTER COLUMN id SET DEFAULT nextval('guests_id_seq'::reg
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY order_statuses ALTER COLUMN id SET DEFAULT nextval('order_statuses_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY orderings ALTER COLUMN id SET DEFAULT nextval('orderings_id_seq'::regclass);
 
 
@@ -496,6 +535,14 @@ ALTER TABLE ONLY categories
 
 ALTER TABLE ONLY guests
     ADD CONSTRAINT guests_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: order_statuses_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY order_statuses
+    ADD CONSTRAINT order_statuses_pkey PRIMARY KEY (id);
 
 
 --
@@ -582,6 +629,6 @@ CREATE INDEX index_refile_attachments_on_oid ON refile_attachments USING btree (
 
 SET search_path TO "$user", public;
 
-INSERT INTO schema_migrations (version) VALUES ('20160808225204'), ('20160808233040'), ('20160808233206'), ('20160808233315'), ('20160808233457'), ('20160808233634'), ('20160808233801'), ('20160809172303'), ('20160809173056'), ('20160809174659'), ('20160809180426'), ('20160809180806'), ('20160809180817'), ('20160809181132'), ('20160809181436'), ('20160809191609'), ('20160809192515'), ('20160809192751'), ('20160809210106'), ('20160810022811'), ('20160810023518'), ('20160810033633'), ('20160810190127');
+INSERT INTO schema_migrations (version) VALUES ('20160808225204'), ('20160808233040'), ('20160808233206'), ('20160808233315'), ('20160808233457'), ('20160808233634'), ('20160808233801'), ('20160809172303'), ('20160809173056'), ('20160809174659'), ('20160809180426'), ('20160809180806'), ('20160809180817'), ('20160809181132'), ('20160809181436'), ('20160809191609'), ('20160809192515'), ('20160809192751'), ('20160809210106'), ('20160810022811'), ('20160810023518'), ('20160810033633'), ('20160810190127'), ('20160810194323'), ('20160810214507'), ('20160810214512');
 
 
