@@ -65,6 +65,12 @@ end
 end
 
 
+OrderStatus.create!(name: "In Progress")
+OrderStatus.create!(name: "Customer Information")
+OrderStatus.create!(name: "Shipping Information")
+OrderStatus.create!(name: "Complete")
+
+
 20.times do
   order = Order.new(order_number: SecureRandom.hex(10))
   user =
@@ -79,6 +85,7 @@ User.includes(:billing_addresses).where.not(:billing_addresses => {can_be_billed
     ordering.quantity = (1..4).to_a.sample
     order.orderings << ordering
   end
+  order.order_status = OrderStatus.find(4)
   order.save!
 end
 
