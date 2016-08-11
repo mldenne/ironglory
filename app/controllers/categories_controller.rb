@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
-    render json: @categories
+    render json: @categories, each_serializer: CategoryIndexSerializer
   end
 
   def show
