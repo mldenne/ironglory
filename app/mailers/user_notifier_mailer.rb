@@ -4,7 +4,8 @@ class UserNotifierMailer < ApplicationMailer
   # send a signup email to the user, pass in the user object that   contains the user's email address
   def send_signup_email(user)
     @user = user
-    mail( :to => @user.email,
-    :subject => 'Thanks for signing up with Iron Glory' )
+    @url = 'https://arcane-harbor-93523.herokuapp.com/login'
+    mail( to: @user.email,
+      subject: 'Thank you for signing up with Iron Glory' )
   end
 end
