@@ -1,26 +1,29 @@
 class OrderingsController < ApplicationController
+  before_action :current_user
   before_action :current_order
+
   def create
-    @order_item = @order.order_items.new(order_item_params)
-    @order.save
+    @ordering = current_order.orderings.create(ordering_params)
+    current_order.save
+    render json: current_order
   end
 
   def update
-    @order_item = @order.order_items.find(params[:id])
-    @order.update_attributes(order_item_params)
-    @order_items = @order.order_items
+    @ordering = current_order.orderings.find(params[:id])
+    @ordering.update(ordering_params)
+    render json: current_order
   end
 
   def destroy
-    @order_item = @order.order_items.find(params [:id])
-    @order_item.destroy
-    @order_items = @order.order_items
+    @ordering = current_order.orderings.find(params[:id])
+    @ordering.destroy
+    render json: current_order
   end
 
   private
 
-  def order_items_params
-    params.require(:order_item).permit(:quantity, :product_id)
+  def ordering_params
+    params.require(:ordering).permit(:quantity, :product_id)
   end
 
 end

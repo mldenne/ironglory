@@ -3,12 +3,12 @@ class Ordering < ApplicationRecord
   belongs_to :product
 
   validates :quantity, presence: true
-  validate :product_present
-  validate :order_present
+  # validate :product_present
+  # validate :order_present
 
-  before_save :finalize
+  # before_save :finalize
 
-  def unit_price
+  # def unit_price
   #   if persisted?
   #     self.[:unit_price]
   #   else
@@ -30,15 +30,15 @@ class Ordering < ApplicationRecord
     end
   end
 
-  def order_present
-    if order.nil?
-      errors.add(:order, "Your cart is empty, please select item to order")
-    end
-  end
+  # def order_present
+  #   if order.nil?
+  #     errors.add(:order, "Your cart is empty, please select item to order")
+  #   end
+  # end
 
-  def finalize
-    self[:unit_price] = unit_price
-    self[:total_price] = quantity * self[:unit_price]
-  end
+  # def finalize
+  #   self[:unit_price] = unit_price
+  #   self[:total_price] = quantity * self[:unit_price]
+  # end
 
 end
