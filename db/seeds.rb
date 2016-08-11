@@ -22,7 +22,8 @@ def convert_data(data)
   if data.include?(":")
     data = data.split(":")[1]
   end
-  data
+  if data == "Bands"
+  data = "Music"
 end
 
 
