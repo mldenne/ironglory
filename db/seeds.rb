@@ -23,7 +23,9 @@ def convert_data(data)
     data = data.split(":")[1]
   end
   if data == "Bands"
-  data = "Music"
+    data = "Music"
+  end
+  data
 end
 
 
