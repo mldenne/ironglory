@@ -1,9 +1,9 @@
 class Ordering < ApplicationRecord
-  belongs_to :order
+  belongs_to :order, optional: true
   belongs_to :product
 
   validates :quantity, presence: true
-  # validate :product_present
+  validate :product_present
   # validate :order_present
 
   # before_save :finalize

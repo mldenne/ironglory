@@ -1,9 +1,9 @@
 class Order < ApplicationRecord
 
-  belongs_to :can_order, polymorphic: true
-  belongs_to :shipping_address
-  belongs_to :billing_address
-  belongs_to :order_status
+  belongs_to :can_order, polymorphic: true, optional: true
+  belongs_to :shipping_address, optional: true
+  belongs_to :billing_address, optional: true
+  belongs_to :order_status, optional: true
 
   before_create :set_order_status
 

@@ -4,8 +4,12 @@ class OrderingsController < ApplicationController
 
   def create
     @ordering = current_order.orderings.create(ordering_params)
-    current_order.save
-    render json: current_order
+    if @ordering.id
+      current_order.save
+      render json: current_order
+    else
+      render json: @ordering.errors
+    end
   end
 
   def update
@@ -23,7 +27,7 @@ class OrderingsController < ApplicationController
   private
 
   def ordering_params
-    params.require(:ordering).permit(:quantity, :product_id)
+    params.permit(:quantity, :product_id)
   end
 
 end
