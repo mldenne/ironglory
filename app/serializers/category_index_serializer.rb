@@ -1,7 +1,7 @@
 class CategoryIndexSerializer < ActiveModel::Serializer
-  attributes :id, :name, :featured_picture
+  attributes :id, :name, :featured_pic
 
-  def featured_picture
-    products.where(featured: true).first.product_image
+  def featured_pic
+    Refile.attachment_url(object.products.where(featured: true).first, :product_image, :fit, 400, 400)
   end
 end

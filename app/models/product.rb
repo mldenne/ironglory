@@ -4,4 +4,5 @@ class Product < ApplicationRecord
   has_many :orderings
   has_many :reviews
   attachment :product_image
+
 end
