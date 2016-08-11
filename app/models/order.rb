@@ -5,7 +5,7 @@ class Order < ApplicationRecord
   belongs_to :billing_address
   belongs_to :order_status
 
-  # before_create :set_order_status
+  before_create :set_order_status
 
   # before_save :update_total_order_price
 
@@ -30,10 +30,10 @@ class Order < ApplicationRecord
 
   private
 
-  # def set_order_status
-  #   self.order_status_id = 1
-  # end
-  #
+  def set_order_status
+    self.order_status_id = 1
+  end
+
   # def update_total_order_price
   #   self[:total_order_price]
   # end

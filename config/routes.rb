@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :categories do
     resources :products
   end
-  resources :orders, only [:show]
+  resources :orders, only: [:show]
   resources :users
   resources :charges
   resources :orderings, only: [:create, :update, :destroy]
