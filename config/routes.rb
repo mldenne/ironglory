@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :orders
   resources :users
-  resources :products, only: [:index]
+  resources :products, only: [:index, :show]
 
   root 'categories#index'
   post '/login' => 'user_sessions#create'
