@@ -1,5 +1,7 @@
 RailsAdmin.config do |config|
 
+  config.main_app_name = ["Iron Glory", "Administrator Page"]
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -38,4 +40,9 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model 'User' do
+    exclude_fields :password_digest
+  end
+
 end
