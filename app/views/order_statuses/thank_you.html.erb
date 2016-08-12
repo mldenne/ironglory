@@ -11,6 +11,10 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
   <link rel="stylesheet" href="css/thankYou.css" />
   <link rel="icon" href="iron-glory-assets/favicon.png">
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag  'thankYou', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'checkout', 'data-turbolinks-track': 'reload' %>
 
 </head>
 <body>
@@ -36,14 +40,14 @@
     <div id="thankYou" class="text-center">
         <h1>Thanks for shopping at</h1>
         <div class="logo-jumbotron">
-          <img src="iron-glory-assets/iron-glory-logos/iron-glory-logo.png" alt="" class="logo-img center-block img-responsive">
+          <%= image_tag "iron-glory-logo.png", class: "logo-img center-block img-responsive" %>
         </div>
         <a href="home.html"><button id="shop" class="btn btn-default">Continue Shopping</button></a>
     </div>
   </main>
   <footer>
     <div class="hidden-md hidden-lg">
-      <img id="footerLogo" src="iron-glory-assets/iron-glory-logos/iron-glory-logo-inverted.png" alt="Iron Glory Logo" class="center-block" />
+      <%= image_tag "iron-glory-logo-inverted.png", id: "footerLogo" %>
       <div id="footerLinks" class="container">
         <div class="row">
           <div class="col-xs-6 col-sm-3">
@@ -73,7 +77,7 @@
       <div id="footerLinksDesktop" class="container">
         <div class="row">
           <div class="col-md-3">
-            <img id="footerLogoDesktop" src="iron-glory-assets/iron-glory-logos/iron-glory-logo-inverted.png" alt="Iron Glory Logo" class="center-block" />
+            <%= image_tag "iron-glory-logo-inverted.png", id: "footerLogoDesktop" %>
           </div>
           <div class="col-md-2">
             <h5 class="text-center">About Iron Glory</h5>

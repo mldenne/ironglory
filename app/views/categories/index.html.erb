@@ -33,14 +33,16 @@
               </div>
             </div>
           </div>
-        <a id="cart" href="cart.html" title="Shopping Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          <%= link_to fakeorder_path, id: "cart" do %>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <% end %>
       </div>
     </nav>
 </header>
 <main>
   <div class="jumbotron text-center">
     <div class="logo-jumbotron">
-      <%= image_tag("iron-glory-assets/iron-glory-logos/iron-glory-logo.png", alt: "", class: "logo-img center-block img-responsive") %>
+      <%= image_tag "iron-glory-logo.png", class: "logo-img center-block img-responsive" %>
     </div>
     <div id="categories">
       <!-- tiles come in here -->
@@ -69,7 +71,7 @@
 </main>
 <footer>
   <div class="hidden-md hidden-lg">
-    <img id="footerLogo" src="iron-glory-assets/iron-glory-logos/iron-glory-logo-inverted.png" alt="Iron Glory Logo" class="center-block" />
+    <%= image_tag "iron-glory-logo-inverted", id: "footerLogo", alt: "Iron Glory Logo", class: "center-block" %>
     <div id="footerLinks" class="container">
       <div class="row">
         <div class="col-xs-6 col-sm-3">
@@ -99,7 +101,7 @@
     <div id="footerLinksDesktop" class="container">
       <div class="row">
         <div class="col-md-3">
-          <%= image_tag("iron-glory-assets/iron-glory-logos/iron-glory-logo-inverted.png", id: "footerLogoDesktop", alt: "Iron Glory Logo", class: "center-block") %>
+          <%= image_tag "iron-glory-logo-inverted", id: "footerLogoDesktop", alt: "Iron Glory Logo", class: "center-block" %>
         </div>
         <div class="col-md-2">
           <h5 class="text-center">About Iron Glory</h5>

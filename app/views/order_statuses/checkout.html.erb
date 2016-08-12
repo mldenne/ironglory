@@ -11,6 +11,10 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
   <link rel="stylesheet" href="css/checkout.css" />
   <link rel="icon" href="iron-glory-assets/favicon.png">
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag  'cart', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'checkout', 'data-turbolinks-track': 'reload' %>
 
 </head>
 <body>
@@ -21,7 +25,7 @@
         <div class="visible-xs">
           <div class="row">
             <div class="col-xs-12 topBarLeft">
-              <a href="home.html"><img id="headerLogo" src="iron-glory-assets/iron-glory-logos/iron-glory-logo.png" alt="Iron Glory Logo" /></a>
+              <a href="home.html"><%= image_tag "iron-glory-logo.png", id: "headerLogo" %></a>
               <!-- Add Login Here -->
               <div class="topRightNav">
                 <a href="#" id="popover1" data-toggle="popover" data-placement="bottom"><i id="profile" class="fa fa-user" aria-hidden="true"></i></a>
@@ -59,7 +63,7 @@
         <div class="visible-sm visible-md visible-lg">
           <div class="row">
             <div class="col-sm-9 col-md-9" id="topBarLeft">
-              <a href="home.html"><img id="headerLogo" src="iron-glory-assets/iron-glory-logos/iron-glory-logo.png" alt="Iron Glory Logo" /></a>
+              <a href="home.html"><%= image_tag "iron-glory-logo.png", id: "headerLogo" %></a>
               <input id="searchBar" placeholder="Search" type="text" />
               <button id="searchButton"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
@@ -253,7 +257,7 @@
   </main>
   <footer>
     <div class="hidden-md hidden-lg">
-      <img id="footerLogo" src="iron-glory-assets/iron-glory-logos/iron-glory-logo-inverted.png" alt="Iron Glory Logo" class="center-block" />
+      <%= image_tag "iron-glory-logo-inverted.png", id: "footerLogo" %>
       <div id="footerLinks" class="container">
         <div class="row">
           <div class="col-xs-6 col-sm-3">
@@ -283,7 +287,7 @@
       <div id="footerLinksDesktop" class="container">
         <div class="row">
           <div class="col-md-3">
-            <img id="footerLogoDesktop" src="iron-glory-assets/iron-glory-logos/iron-glory-logo-inverted.png" alt="Iron Glory Logo" class="center-block" />
+            <%= image_tag "iron-glory-logo-inverted.png", id: "footerLogoDesktop" %>
           </div>
           <div class="col-md-2">
             <h5 class="text-center">About Iron Glory</h5>

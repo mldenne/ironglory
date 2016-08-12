@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("../iron-glory-assets/iron-glory-background.jpg");
+    background-image: url("iron-glory-background");
     background-position: center;
     background-size: cover;
     min-height: 100vh;

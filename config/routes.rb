@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :users
   resources :products, only: [:index, :show]
 
+  get '/order_statuses' => 'order_statuses#show'
+  get '/order_statuses/thank_you' => 'order_statuses#thank_you'
+
   root 'categories#index'
   post '/login' => 'user_sessions#create'
   get '/check' => 'user_sessions#show'
