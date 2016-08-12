@@ -38,6 +38,10 @@ gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
 gem 'refile-postgres', '~> 1.4'
 gem 'rack-cors', :require => 'rack/cors'
 
+# for admin area
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+
 # for credit card processing
 gem 'stripe'
 
