@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for making a purchase from Iron Glory, <%= @user.firstname + " " + @user.lastname %>!</h1>
+    <p>Your username is <%= @user.username %></p>
+    <!-- purchase receipt -->
+    <p>To login and check your order, just follow this link: <%= @url %>.</p>
+  </body>
+</html>

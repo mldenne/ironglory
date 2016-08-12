@@ -8,4 +8,12 @@ class UserNotifierMailer < ApplicationMailer
     mail( to: @user.email,
       subject: 'Thank you for signing up with Iron Glory' )
   end
+
+  def send_purchase_email(user)
+    @user = user
+    @url = 'https://arcane-harbor-93523.herokuapp.com/login'
+    mail( to: @user.email,
+      subject: 'Thank you for purchasing from Iron Glory' )
+  end
+
 end
