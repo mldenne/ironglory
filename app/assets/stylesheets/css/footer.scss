@@ -1,0 +1,78 @@
+@import 'colors';
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+footer {
+    background-color: $purple;
+    height: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+    #footerLogo {
+        display: inline-block;
+        width: 200px;
+        margin-top: 35px;
+    }
+    #footerLinks {
+        margin-top: 25px;
+        a{
+            color: white;
+            text-decoration: none;
+            :hover,
+            :focus {
+                color: $pink;
+            }
+        }
+        h5 {
+            font-size: 12px;
+            margin-bottom: 0px;
+        }
+        .social-links {
+          height: 100%;
+          margin-top: 25px;
+          font-size: 20px;
+          a {
+              color: $pink;
+          }
+          :hover,
+          :focus {
+              color: white;
+          }
+        }
+    }
+    #footerLogoDesktop {
+        display: inline-block;
+        width: 200px;
+        margin-top: 45px;
+    }
+    #footerLinksDesktop {
+        color: $pink;
+        padding-top: 15px;
+        a {
+            color: white;
+        }
+        a:hover,
+        a:focus {
+            text-decoration: none;
+            color: $pink;
+        }
+        #phone {
+            color: white;
+        }
+        .social-links {
+            i {
+                color: $pink;
+                margin-top: 20px;
+                font-size: 18px;
+            }
+            i:hover {
+                color: white;
+            }
+        }
+        #copy {
+            margin-top: 20px;
+            font-size: 12px;
+        }
+    }
+}

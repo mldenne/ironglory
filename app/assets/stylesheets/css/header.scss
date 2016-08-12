@@ -1,0 +1,268 @@
+@import 'colors';
+@import 'header.css';
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    background-image: url('../iron-glory-assets/iron-glory-background-cropped.jpg');
+    height: 160px;
+    background-size: cover;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    #topBar {
+        margin-top: 15px;
+        #headerLogo {
+            width: 155px;
+            display:inline-block;
+        }
+        #loginDropdown {
+            display:inline-block;
+            width: 80px;
+            font-size: 13px;
+            margin-left: 20px;
+            padding: 0px;
+            background-color: transparent;
+            border: 0px;
+            box-shadow: none;
+        }
+        .buttonsSignContainer {
+          display: flex;
+          flex-direction: row;
+        }
+        .leftSignButtonContainer {
+          flex: 1;
+        }
+        .rightSignButtonContainer {
+          flex: 1;
+        }
+        .leftSignButton {
+          width: 100px;
+          margin: 2px;
+        }
+        .rightSignButton {
+          width: 100px;
+          margin: 2px;
+        }
+        .topRightNav {
+            float: right;
+            display: inline-block;
+            font-size: 20px;
+            color: $pink;
+            a {
+                color: $pink;
+            }
+            :hover {
+            color: $gray;
+            }
+        }
+        #searchBar {
+            display:inline-block;
+            margin-top: 18px;
+            margin-left: 13vw;
+            width: 65vw;
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 1px 5px;
+            border: 1px solid rgba(#424242, 0.3);
+        }
+        #searchButton {
+            display: inline-block;
+            background-color: transparent;
+            border: 0px;
+            color: $purple;
+        }
+    }
+    #categoriesBar {
+        margin-top: 15px;
+        color: white;
+        text-shadow: -1px 0 $purple, 0 1px $purple, 1px 0 $purple, 0 -1px $purple;
+        a {
+            font-size: 12px;
+            color: white;
+            text-shadow: -1px 0 $purple, 0 1px $purple, 1px 0 $purple, 0 -1px $purple;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px){
+    #topBar {
+        #topBarLeft {
+            img#headerLogo {
+                width: 200px;
+                display: inline-block;
+            }
+            #searchBar {
+                display: inline-block;
+                width: 250px;
+                margin-left: 10px;
+            }
+            #searchButton {
+                display: inline-block;
+                height: 26px;
+                width: 26px;
+                margin-top: 23px;
+                margin-left: -1px;
+            }
+        }
+        #topBarRight {
+            margin-top: 18px;
+        }
+        .topRightNav {
+            float: right;
+            display: inline-block;
+            font-size: 25px;
+            color: $pink;
+            a {
+                color: $pink;
+            }
+            :hover {
+            color: $gray;
+            }
+        }
+        #categoriesBar {
+            margin-top: 6vh;
+            .category {
+                a {
+                    color: white;
+                    text-shadow: -1px 0 $purple, 0 1px $purple, 1px 0 $purple, 0 -1px $purple;
+                    display: inline-block;
+                    h4 {
+                        font-size: 14px;
+                    }
+                }
+                a:hover,
+                a:focus  {
+                    text-decoration: none;
+                    background-color: $pink;
+                    color: white;
+                    padding: 0px 10px;
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1001px) {
+    #topBar {
+        #topBarLeft {
+            img#headerLogo {
+                width: 200px;
+                display: inline-block;
+            }
+            #searchBar {
+                display: inline-block;
+                width: 400px;
+                margin-left: 10px;
+            }
+            #searchButton {
+                display: inline-block;
+                height: 26px;
+                width: 26px;
+                margin-top: 23px;
+                margin-left: -1px;
+            }
+        }
+        #topBarRight {
+            margin-top: 18px;
+        }
+        #loggedIn {
+            float: left;
+            display: inline-block;
+            margin-left: 5px;
+            color: $gray;
+            text-decoration: none;
+            :hover,
+            :focus  {
+                color: $pink;
+            }
+            h5 {
+                font-size: 15px;
+                color: $purple;
+            }
+        }
+        #logout {
+            float: left;
+            display: inline-block;
+            margin-left: 27px;
+            color: $gray;
+            text-decoration: none;
+            :hover,
+            :focus  {
+                color: $pink;
+            }
+            h5 {
+                font-size: 15px;
+                color: $purple;
+            }
+        }
+        #cart {
+            float: right;
+            display: inline-block;
+            font-size: 25px;
+            color: $pink;
+            margin-top: -3px;
+        }
+        #categoriesBar {
+            margin-top: 6vh;
+            font-size: 20px;
+            .category {
+                a {
+                    color: white;
+                    text-shadow: -1px 0 $purple, 0 1px $purple, 1px 0 $purple, 0 -1px $purple;
+                    display: inline-block;
+                }
+                a:hover,
+                a:focus  {
+                    text-decoration: none;
+                    background-color: $pink;
+                    color: white;
+                    padding: 0px 10px;
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1386px) {
+    #topBar {
+        #topBarLeft {
+            #searchBar {
+                display: inline-block;
+                width: 40vw;
+            }
+            #searchButton {
+                display: inline-block;
+                height: 26px;
+                width: 26px;
+                margin-top: 23px;
+                margin-left: -1px;
+            }
+        }
+        #topBarRight {
+            margin-top: 18px;
+        }
+        .categoriesBar {
+            margin-top: 15vh;
+            .category {
+                a {
+                    color: white;
+                    text-shadow: -1px 0 $purple, 0 1px $purple, 1px 0 $purple, 0 -1px $purple;
+                    display: inline-block;
+                }
+                a:hover,
+                a:focus  {
+                    text-decoration: none;
+                    background-color: $pink;
+                    color: white;
+                    padding: 0px 10px;
+                }
+
+            }
+        }
+    }
+}

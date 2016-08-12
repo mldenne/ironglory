@@ -1,0 +1,186 @@
+@import url(footer.css);
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+.navbar {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+}
+
+.navbar .rightNav {
+  margin-right: 15px;
+  margin-top: 10px;
+  float: right;
+  display: inline-block;
+  font-size: 25px;
+  color: #EB0A8D;
+}
+
+.navbar .rightNav a {
+  color: #EB0A8D;
+}
+
+.navbar .rightNav :hover {
+  color: #424242;
+}
+
+.buttonsSignContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftSignButtonContainer {
+  flex: 1;
+}
+
+.rightSignButtonContainer {
+  flex: 1;
+}
+
+.leftSignButton {
+  width: 100px;
+  margin: 2px;
+}
+
+.rightSignButton {
+  width: 100px;
+  margin: 2px;
+}
+
+.jumbotron {
+  background-image: url("../iron-glory-assets/iron-glory-background.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  margin-bottom: 0;
+}
+
+.logo-img {
+  height: 75px;
+  margin-top: 110px;
+}
+
+.tile-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50vw;
+  align-content: center;
+  justify-content: center;
+}
+
+.text-container {
+  flex: 1;
+  margin: 5px;
+  width: 100%;
+  padding: 0;
+  z-index: 0;
+  min-width: 240px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tile {
+  background-image: linear-gradient(rgba(249, 241, 225, 0.5), rgba(249, 241, 225, 0.5));
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.tile .tile-text {
+  margin: 75px 0;
+  font-size: 30px;
+  white-space: nowrap;
+  font-weight: 900;
+  color: #351D27;
+  text-shadow: 1px 1px 1px white;
+  z-index: 3;
+  letter-spacing: 2px;
+}
+
+.tileAll {
+  background-image: url("../iron-glory-assets/iron-glory-products/igp2.png");
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+.tile-container a {
+  position: relative;
+  display: inline-block;
+  margin: 15px 25px;
+  line-height: 1;
+}
+
+.tile-container a:hover,
+.tile-container a:focus {
+  outline: none;
+}
+
+.cl-effect-18 {
+  position: relative;
+  z-index: 2;
+}
+
+.cl-effect-18 a {
+  padding: 0 5px;
+  transition: color 0.3s;
+}
+
+.cl-effect-18 a::before,
+.cl-effect-18 a::after {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  height: 3px;
+  margin-top: -1px;
+  background: #351D27;
+  content: '';
+  z-index: -2;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.cl-effect-18 a::before {
+  transform: translateY(-20px);
+}
+
+.cl-effect-18 a::after {
+  transform: translateY(20px);
+}
+
+.cl-effect-18 a:hover::before,
+.cl-effect-18 a:hover::after,
+.cl-effect-18 a:focus::before,
+.cl-effect-18 a:focus::after {
+  opacity: 0.4;
+}
+
+.cl-effect-18 a:hover::before,
+.cl-effect-18 a:focus::before {
+  transform: rotate(45deg);
+}
+
+.cl-effect-18 a:hover::after,
+.cl-effect-18 a:focus::after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 400px) {
+  .img-responsive {
+    height: 50px;
+    max-width: 90%;
+  }
+}

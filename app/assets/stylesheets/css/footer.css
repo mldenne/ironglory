@@ -1,0 +1,90 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+footer {
+    background-color: #351D27;
+    height: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+footer #footerLogo {
+    display: inline-block;
+    width: 200px;
+    margin-top: 35px;
+}
+
+footer #footerLinks {
+    margin-top: 25px;
+}
+
+footer #footerLinks a {
+    color: white;
+    text-decoration: none;
+}
+
+footer #footerLinks a :hover,
+footer #footerLinks a :focus {
+    color: #EB0A8D;
+}
+
+footer #footerLinks h5 {
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+footer #footerLinks .social-links {
+    height: 100%;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+footer #footerLinks .social-links a {
+    color: #EB0A8D;
+}
+
+footer #footerLinks .social-links :hover,
+footer #footerLinks .social-links :focus {
+    color: white;
+}
+
+footer #footerLogoDesktop {
+    display: inline-block;
+    width: 200px;
+    margin-top: 45px;
+}
+
+footer #footerLinksDesktop {
+    color: #EB0A8D;
+    padding-top: 15px;
+}
+
+footer #footerLinksDesktop a {
+    color: white;
+}
+
+footer #footerLinksDesktop a:hover,
+footer #footerLinksDesktop a:focus {
+    text-decoration: none;
+    color: #EB0A8D;
+}
+
+footer #footerLinksDesktop #phone {
+    color: white;
+}
+
+footer #footerLinksDesktop .social-links i {
+    color: #EB0A8D;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+footer #footerLinksDesktop .social-links i:hover {
+    color: white;
+}
+
+footer #footerLinksDesktop #copy {
+    margin-top: 20px;
+    font-size: 12px;
+}
