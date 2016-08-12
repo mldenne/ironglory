@@ -1,0 +1,210 @@
+@import url(footer.css);
+@import url(header.css);
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+main {
+    min-height: 81.5vh;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.title {
+    border-bottom: 2px solid #351D27;
+}
+
+.mainColumns {
+    margin-top: 180px;
+}
+
+.invContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.imgContainer {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.imgContainer img {
+    width: 100%;
+    height: 100%;
+    min-width: 80px;
+}
+
+.textContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.textContainer .titleContainer {
+    flex: 1;
+}
+
+.textContainer .titleContainer .productTitle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    height: 100%;
+    margin: 5px 0px 0px;
+}
+
+.textContainer .priceContainer {
+    flex: 1;
+}
+
+.textContainer .priceContainer .price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 12px;
+    height: 100%;
+    margin: 0;
+}
+
+.textContainer .quantityContainer {
+    flex: 1;
+}
+
+.textContainer .quantityContainer .quantitySubContainer {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: auto;
+}
+
+.textContainer .quantityContainer .quantityText {
+    display: inline-block;
+    font-size: 12px;
+    margin: 0;
+}
+
+.textContainer .quantityContainer #quantity {
+    display: inline-block;
+    margin-left: 5px;
+    padding-left: 5px;
+    float: left;
+    width: 20%;
+}
+
+.textContainer .updateContainer {
+    flex: 1;
+}
+
+.textContainer .updateContainer .update {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 12px;
+    height: 100%;
+    margin: 0;
+}
+
+.subtotalContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.subtotalContainer .numbersContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+.subtotalContainer .numbersContainer .subtotalContainer {
+    flex: 1;
+}
+
+.subtotalContainer .numbersContainer .subtotalContainer h5 {
+    margin-bottom: 0px;
+}
+
+.subtotalContainer .numbersContainer .shippingContainer {
+    flex: 1;
+}
+
+.subtotalContainer .numbersContainer .shippingContainer h5 {
+    margin-bottom: 0px;
+}
+
+.subtotalContainer .numbersContainer .taxesContainer {
+    flex: 1;
+    border-bottom: 1px solid #351D27;
+}
+
+.subtotalContainer .numbersContainer .totalContainer {
+    flex: 1;
+    margin-top: 10px;
+}
+
+.subtotalContainer .numbersContainer .totalContainer h5 {
+    font-size: 16px;
+}
+
+.subtotalContainer .buttonsContainer {
+    margin: 20px 0px 30px;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.subtotalContainer .buttonsContainer button:hover {
+    color: #EB0A8D;
+}
+
+.subtotalContainer .buttonsContainer .continueContainer {
+    margin-left: 20px;
+    flex: 1;
+}
+
+.subtotalContainer .buttonsContainer .checkoutContainer {
+    flex: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .textContainer .titleContainer .productTitle {
+        flex: 2;
+        font-size: 24px;
+    }
+    .textContainer .priceContainer .price {
+        font-size: 16px;
+    }
+    .textContainer .quantityContainer .quantitySubContainer .quantityText {
+        font-size: 16px;
+    }
+    .textContainer .quantityContainer .quantitySubContainer #quantity {
+        width: 15%;
+    }
+    .textContainer .updateContainer .update {
+        font-size: 16px;
+    }
+    .subtotalContainer {
+        margin-top: 3px;
+    }
+    .buttonsContainer .checkoutContainer {
+        margin-left: -50px;
+    }
+    .buttonsContainer .checkoutContainer #checkoutLink {
+        color: #424242;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .buttonsContainer .checkoutContainer {
+        margin-left: -150px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .buttonsContainer .checkoutContainer {
+        margin-left: -250px;
+    }
+}

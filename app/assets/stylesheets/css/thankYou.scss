@@ -1,0 +1,84 @@
+@import 'colors';
+@import 'footer.css';
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-image: url('../iron-glory-assets/iron-glory-background.jpg');
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    margin-bottom: 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+a:focus {
+    text-decoration: none;
+}
+.buttonsSignContainer {
+  display: flex;
+  flex-direction: row;
+}
+.leftSignButtonContainer {
+  flex: 1;
+}
+.rightSignButtonContainer {
+  flex: 1;
+}
+.leftSignButton {
+  width: 100px;
+  margin: 2px;
+}
+.rightSignButton {
+  width: 100px;
+  margin: 2px;
+}
+.navbar {
+  position: fixed;
+  top: 5px;
+  height: 100px;
+  width: 100%;
+    .rightNav {
+        margin-right: 15px;
+        margin-top: 10px;
+        float: right;
+        font-size: 25px;
+        color: $pink;
+        a {
+            color: $pink;
+        }
+        :hover {
+        color: $gray;
+        }
+    }
+}
+.logo-img {
+    height: 75px;
+    margin-top: 25px;
+}
+
+#thankYou {
+    margin-top: 31vh;
+    color: $purple;
+    margin-bottom: 43vh;
+}
+
+#shop {
+    margin-top: 70px;
+    background-color: transparent;
+    color: $pink;
+}
+
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 25px;
+    }
+    .img-responsive {
+        height: 50px;
+        max-width: 90%;
+    }
+}

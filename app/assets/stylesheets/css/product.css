@@ -1,0 +1,13 @@
+@import url(header.css);
+@import url(footer.css);
+#productDetails {
+  margin-top: 200px;
+}
+
+#productDetails .prodTitle {
+  margin-top: 0px;
+}
+
+footer {
+  margin-top: 25px;
+}
