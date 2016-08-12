@@ -4,7 +4,7 @@
 }
 
 header {
-  background-image: url("../iron-glory-assets/iron-glory-background-cropped.jpg");
+  background-image: url("iron-glory-background-cropped");
   height: 160px;
   background-size: cover;
   position: fixed;
