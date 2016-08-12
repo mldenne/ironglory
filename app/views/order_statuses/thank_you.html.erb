@@ -32,7 +32,9 @@
               </div>
             </div>
           </div>
-        <a id="cart" href="cart.html" title="Shopping Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          <%= link_to fakeorder_path, id: "cart" do %>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <% end %>
       </div>
     </nav>
 </header>
@@ -40,9 +42,9 @@
     <div id="thankYou" class="text-center">
         <h1>Thanks for shopping at</h1>
         <div class="logo-jumbotron">
-          <%= image_tag "iron-glory-logo.png", class: "logo-img center-block img-responsive" %>
+          <%= link_to (image_tag "iron-glory-logo.png", class: "logo-img center-block img-responsive"), categories_path %>
         </div>
-        <a href="home.html"><button id="shop" class="btn btn-default">Continue Shopping</button></a>
+        <%= button_to "Continue Shopping", categories_path, method: "get", id: "shop", class:"btn btn-default" %>
     </div>
   </main>
   <footer>

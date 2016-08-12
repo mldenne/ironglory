@@ -28,7 +28,7 @@
         <div class="visible-xs">
           <div class="row">
             <div class="col-xs-12 topBarLeft">
-              <a href="home.html"><%= image_tag "iron-glory-logo.png", id: "headerLogo" %></a>
+              <%= link_to (image_tag "iron-glory-logo.png", id: "headerLogo"), categories_path %>
               <!-- Add Login Here -->
               <div class="topRightNav">
                 <a href="#" id="popover1" data-toggle="popover" data-placement="bottom"><i id="profile" class="fa fa-user" aria-hidden="true"></i></a>
@@ -42,7 +42,9 @@
                       </div>
                     </div>
                   </div>
-                <a id="cart" href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                  <%= link_to fakeorder_path, id: "cart" do %>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                  <% end %>
               </div>
             </div>
           </div>
@@ -83,7 +85,9 @@
                       </div>
                     </div>
                   </div>
-                <a id="cart" href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                  <%= link_to fakeorder_path, id: "cart" do %>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                  <% end %>
               </div>
             </div>
           </div>
