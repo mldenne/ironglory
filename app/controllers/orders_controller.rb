@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+
   before_action :current_user, except: [:fake_order]
   before_action :current_order, except: [:fake_order]
 

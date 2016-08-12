@@ -4,4 +4,5 @@ Refile.configure do |config|
   config.store = Refile::Postgres::Backend.new(connection)
 end
 
+
 Refile.cdn_host = 'http://arcane-harbor-93523.herokuapp.com/'
