@@ -36,7 +36,7 @@
 <main>
   <div class="jumbotron text-center">
     <div class="logo-jumbotron">
-      <img src="iron-glory-assets/iron-glory-logos/iron-glory-logo.png" alt="" class="logo-img center-block img-responsive">
+      <%= image_tag("iron-glory-assets/iron-glory-logos/iron-glory-logo.png", alt: "", class: "logo-img center-block img-responsive") %>
     </div>
     <div id="categories">
       <!-- tiles come in here -->
@@ -95,7 +95,7 @@
     <div id="footerLinksDesktop" class="container">
       <div class="row">
         <div class="col-md-3">
-          <img id="footerLogoDesktop" src="iron-glory-assets/iron-glory-logos/iron-glory-logo-inverted.png" alt="Iron Glory Logo" class="center-block" />
+          <%= image_tag("iron-glory-assets/iron-glory-logos/iron-glory-logo-inverted.png", id: "footerLogoDesktop", alt: "Iron Glory Logo", class: "center-block") %>
         </div>
         <div class="col-md-2">
           <h5 class="text-center">About Iron Glory</h5>
