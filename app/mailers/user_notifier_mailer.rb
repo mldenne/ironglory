@@ -16,4 +16,11 @@ class UserNotifierMailer < ApplicationMailer
       subject: 'Thank you for purchasing from Iron Glory' )
   end
 
+  def send_purchase_email_guest(guest)
+    @guest = guest
+    @url = 'https://arcane-harbor-93523.herokuapp.com/login'
+    mail( to: @guest.email,
+      subject: 'Thank you for purchasing from Iron Glory' )
+  end
+
 end
