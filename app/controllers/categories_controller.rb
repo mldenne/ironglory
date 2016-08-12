@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :current_user
+  before_action :current_order
   def index
     @categories = Category.all
     respond_to do |format|
