@@ -1,24 +1,4 @@
-# README
+# The Iron Glory App
+### An eCommerce app for selling retro patches
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a June 2016 Indianapolis Iron Yard Cohort production. On Monday, August 8, 2016, we were contacted by Collin of Iron Glory, a retro patch redistributor. Our goal: to create an eCommerce store where Collin is able to make lots of money selling patches that he and his merry band of mischief makers have been pilfering from flea markets and garage sales across the country for the last year. 
