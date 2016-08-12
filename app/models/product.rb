@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   has_many :orders, through: :orderings
   has_many :orderings
   has_many :reviews
-  attachment :product_image
+  attachment :product_image, type: :image
 
   # ensures deleted/inactive products are not shown
   # default_scope { where(active: true) }
