@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Iron Glory</title>
+    <meta name="description" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/fotorama.css"> -->
+    <link rel="stylesheet" href="css/product.css" />
+    <link rel="icon" href="iron-glory-assets/favicon.png">
+</head>
+
+<body>
+  <header>
+    <div id="topBar">
+      <div class="container">
+        <!-- Header for mobile -->
+        <div class="visible-xs">
+          <div class="row">
+            <div class="col-xs-12 topBarLeft">
+              <a href="home.html"><img id="headerLogo" src="iron-glory-assets/iron-glory-logos/iron-glory-logo.png" alt="Iron Glory Logo" /></a>
+              <!-- Add Login Here -->
+              <div class="topRightNav">
+                <a href="#" id="popover1" data-toggle="popover" data-placement="bottom"><i id="profile" class="fa fa-user" aria-hidden="true"></i></a>
+                  <div id="popover-content1" class="hide">
+                    <div class="buttonsSignContainer">
+                      <div class="leftSignButtonContainer">
+                        <button class="btn btn-default text-center leftSignButton" data-toggle="modal" data-target="#signInModal" >Sign In</button>
+                      </div>
+                      <div class="rightSignButtonContainer">
+                        <button class="btn btn-default text-center rightSignButton" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+                      </div>
+                    </div>
+                  </div>
+                <a id="cart" href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <input id="searchBar" placeholder="Search" type="text" />
+              <button id="searchButton"><i  class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div id="categoriesBar" class="container text-center">
+            <a href="#cat1">Movies</a> |
+            <a href="#cat2">Music</a> |
+            <a href="#cat3">National Parks</a><br />
+            <a href="#cat4">Farming</a> |
+            <a href="#cat5">All Categories</a>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <!-- Header for web -->
+        <div class="visible-sm visible-md visible-lg">
+          <div class="row">
+            <div class="col-sm-9 col-md-9" id="topBarLeft">
+              <a href="home.html"><img id="headerLogo" src="iron-glory-assets/iron-glory-logos/iron-glory-logo.png" alt="Iron Glory Logo" /></a>
+              <input id="searchBar" placeholder="Search" type="text" />
+              <button id="searchButton"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+            <div class="col-sm-3 col-md-3" id="topBarRight">
+              <div class="topRightNav">
+                <a href="#" id="popover2" data-toggle="popover" data-placement="bottom"><i id="profile" class="fa fa-user" aria-hidden="true"></i></a>
+                  <div id="popover-content2" class="hide">
+                    <div class="buttonsSignContainer">
+                      <div class="leftSignButtonContainer">
+                        <button class="btn btn-default text-center leftSignButton" data-toggle="modal" data-target="#signInModal" >Sign In</button>
+                      </div>
+                      <div class="rightSignButtonContainer">
+                        <button class="btn btn-default text-center rightSignButton" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+                      </div>
+                    </div>
+                  </div>
+                <a id="cart" href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div id="categoriesBar" class="container">
+            <div class="row">
+              <div class="col-sm-2 col-sm-offset-1 text-center category">
+                <a href="#"><h4>Movies</h4></a>
+              </div>
+              <div class="col-sm-2 text-center category">
+                <a href="#"><h4>Music</h4></a>
+              </div>
+              <div class="col-sm-2 text-center category">
+                <a href="#"><h4>National Parks</h4></a>
+              </div>
+              <div class="col-sm-2 text-center category">
+                <a href="#"><h4>Farming</h4></a>
+              </div>
+              <div class="col-sm-2 text-center category">
+                <a href="#"><h4>All</h4></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div id="productDetails">
+      <!-- <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-5 col-md-5 col-md-offset-1">
+            <img class="productImage" src="https://unsplash.it/400/400/?random"></img>
+          </div>
+          <div class="col-xs-12 col-sm-7 col-md-5">
+            <h1 class="prodTitle">Title</h1>
+            <h3>Price</h3>
+            <h5 class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
+            <button class="btn btn-default">ADD TO CART</button>
+            <hr />
+            <div class="form-group">
+              <label for="comment">Comments</label>
+              <textarea class="form-control" rows="5" id="commentBox"></textarea>
+            </div>
+            <div class="comments">
+
+            </div>
+          </div>
+        </div>
+
+      </div> -->
+
+      <!-- <div class="c1 col-xs-12 hidden-sm hidden-md hidden-lg hidden-xl text-center">
+        <div class="fotorama" data-width="480" data-ratio="480/300" data-min-width="100%">
+          <img class="a1" src="https://unsplash.it/480/300/?random" />
+          <img class="a1" src="https://unsplash.it/480/300/?random" />
+          <img class="a1" src="https://unsplash.it/480/300/?random" />
+          <img class="a1" src="https://unsplash.it/480/300/?random" />
+
+      <div class="c3 hidden-xs col-sm-10 col-sm-offset-1 col-md-8 hidden-md col-md-offset-2 hidden-lg hidden-xl text-center">
+        <div class="fotorama" data-width="480" data-ratio="480/300" data-min-width="100%">
+          <img class="a1" src="https://unsplash.it/480/300/?random" />
+          <img class="a1" src="https://unsplash.it/480/300/?random" />
+          <img class="a1" src="https://unsplash.it/480/300/?random" />
+          <img class="a1" src="https://unsplash.it/480/300/?random" />
+        </div>
+      </div> -->
+
+  </main>
+  <footer>
+    <div class="hidden-md hidden-lg">
+      <img id="footerLogo" src="iron-glory-assets/iron-glory-logos/iron-glory-logo-inverted.png" alt="Iron Glory Logo" class="center-block" />
+      <div id="footerLinks" class="container">
+        <div class="row">
+          <div class="col-xs-6 col-sm-3">
+            <a href="#contact.html"><h5 class="text-center">About Iron Glory</h5></a>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <a href="#return.html"><h5 class="text-center">Customer Service</h5></a>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <a href="#shipping.html"><h5 class="text-center">This is Iron Glory</h5></a>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <a href="#other.html"><h5 class="text-center">Get in Touch</h5></a>
+          </div>
+        </div>
+        <div class="col-xs-12 social-links text-center">
+          <a href="https://www.facebook.com/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://www.snapchat.com/"><i class="fa fa-snapchat" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="hidden-xs hidden-sm">
+
+      <div id="footerLinksDesktop" class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img id="footerLogoDesktop" src="iron-glory-assets/iron-glory-logos/iron-glory-logo-inverted.png" alt="Iron Glory Logo" class="center-block" />
+          </div>
+          <div class="col-md-2">
+            <h5 class="text-center">About Iron Glory</h5>
+            <a href="#"><h6>About Us</h6></a>
+            <a href="#"><h6>Careers</h6></a>
+            <a href="#"><h6>Site Map</h6></a>
+            <a href="#"><h6>Refer a Friend</h6></a>
+          </div>
+          <div class="col-md-2">
+            <h5 class="text-center">Customer Service</h5>
+            <a href="#"><h6>Returns and Exchanges</h6></a>
+            <a href="#"><h6>Shipping and Delivery</h6></a>
+            <a href="#"><h6>Payment</h6></a>
+            <a href="#"><h6>Iron Glory Coupons</h6></a>
+          </div>
+          <div class="col-md-2">
+            <h5 class="text-center">This is Iron Glory</h5>
+            <a href="#"><h6>The Iron Glory Concept</h6></a>
+            <a href="#"><h6>About the Iron Group</h6></a>
+            <a href="#"><h6>Press Room</h6></a>
+            <a href="#"><h6>Read our Materials</h6></a>
+          </div>
+          <div class="col-md-2 social-links text-center">
+            <h5>Get in Touch</h5>
+            <h6 id="phone">317-317-3173</h6>
+            <a href="#"><h6>collin@ironglory.com</h6></a>
+            <a href="https://www.facebook.com/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://www.snapchat.com/"><i class="fa fa-snapchat" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="row" id="copy">
+          <div class="col-md-12 text-center">
+            <h7 id="copyright">&copy; Iron Glory 2016</h7>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="modal fade" id="signInModal" role="dialog">
+    <div class="modal-dialog">
+      <!--SignIn Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign In</h4>
+        </div>
+        <br />
+        <div class="modal-body">
+          <form method="post" action="#" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="nameModal">Username</label>
+              <input type="text" class="form-control" id="usernameModal" name="nameModal" required />
+            </div>
+            <div class="form-group">
+              <label for="passwordModal">Password</label>
+              <input type="text" class="form-control" id="passwordModal" name="passwordModal" required />
+            </div>
+            <br />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default">
+            <span>Sign In</span>
+          </button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="signUpModal" role="dialog">
+    <div class="modal-dialog">
+      <!--SignUp Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign Up</h4>
+        </div>
+        <br />
+        <div class="modal-body">
+          <form method="post" action="#" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="firstNameModal">First Name</label>
+              <input type="text" class="form-control" id="firstNameModal" name="firstNameModal" required />
+            </div>
+            <div class="form-group">
+              <label for="lastNameModal">Last Name</label>
+              <input type="text" class="form-control" id="lastNameModal" name="lastNameModal" required />
+            </div>
+            <div class="form-group">
+              <label for="emailSignUpModal">Email</label>
+              <input type="text" class="form-control" id="emailSignUpModal" name="emailSignUpModal" required />
+            </div>
+            <div class="form-group">
+              <label for="usernameModalSignUp">Username</label>
+              <input type="text" class="form-control" id="usernameModalSignUp" name="usernameModalSignUp" required />
+            </div>
+            <div class="form-group">
+              <label for="passwordModalSignUp">Password</label>
+              <input type="text" class="form-control" id="passwordModalSignUp" name="passwordModalSignUp" required />
+            </div>
+            <br />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default">
+            <span>Sign Up</span>
+          </button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="js/profilePopup.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/item.bundle.js"></script>
+</body>
+
+</html>
