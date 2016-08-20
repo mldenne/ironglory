@@ -18,13 +18,18 @@ Due to the nature of this app (class project), contributions are ill-advised. Bu
 
 ## The Team
 
-The front-end engineers
+The front-end engineers:
+
 [Jake Willingham](https://github.com/jwillingham789)
+
 [Amber Smith](https://github.com/smithambera)
+
 [Alec Stewart](https://github.com/alecstewart)
 
-The back-end engineers
+The back-end engineers:
+
 [Isaiah Fasoldt](https://github.com/ifasoldt)
+
 [Marie Denney](https://github.com/mldenne)
 
 ### Disclaimer
